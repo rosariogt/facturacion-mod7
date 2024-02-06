@@ -1,0 +1,49 @@
+<div class="container py-5">
+
+  <div class="row text-center py-5">
+    <h2>REGISTRO CLIENTE</h2>
+  </div>
+
+  <form class="row g-3">
+    <div class="row my-2" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label for="codigo" class="form-label">Código</label>
+        <input type="codigo" class="form-control" id="codigo" [(ngModel)]="cliente!.codigo" name="codigo">
+      </div>
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="nombre" class="form-control" id="nombre" [(ngModel)]="cliente!.nombre" name="nombre">
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col-6">
+        <label for="tipoDocumento" class="form-label">Tipo Documento</label>
+        <select id="inputDocumento" class="form-select" [(ngModel)]="cliente!.tipoDocumento" name="tipoDocumento">
+          <option selected>CI</option>
+          <option>NIT</option>
+          <option>DNI</option>
+        </select>
+      </div>
+
+      <div class="col-6">
+        <label for="numeroDocumento" class="form-label">Número documento</label>
+        <input type="text" class="form-control" id="numeroDocumento" [(ngModel)]="cliente!.numeroDocumento" name="numeroDocumento">
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col-6">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="correo" [(ngModel)]="cliente!.correo" name="correo">
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </div>
+  </form>
+
+</div>
+
+
