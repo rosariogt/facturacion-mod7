@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ClienteRegistroComponent } from './cliente/cliente-registro/cliente-registro.component';
 import { FacturaRegistroComponent } from './factura-registro/factura-registro.component';
 import {MatCardModule} from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,6 +27,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatCardModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatStepperModule
   ],

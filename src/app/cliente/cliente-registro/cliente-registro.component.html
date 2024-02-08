@@ -4,22 +4,30 @@
     <h2>REGISTRO CLIENTE</h2>
   </div>
 
-  <form class="row g-3">
-    <div class="row my-2" (ngSubmit)="onSubmit()">
+  <form class="row g-3" [formGroup]="registroForm" (ngSubmit)="registrarCliente()">
+    <div class="row my-2">
       <div class="col-md-6">
         <label for="codigo" class="form-label">Código</label>
-        <input type="codigo" class="form-control" id="codigo" [(ngModel)]="cliente!.codigo" name="codigo">
+        <input type="codigo" class="form-control" id="codigo" formControlName="codigo" name="codigo" placeholder="XYZ" minlength="2" maxlength="40">
+        <div *ngIf="(codigo?.dirty || codigo?.touched) && codigo?.invalid">
+          <div class="alert alert-danger" *ngIf="codigo?.errors">Codigo es requerido</div>
+          <!-- <div *ngIf="codigo.errors.minlength>Codigo debe ser al menos 2 caracteres.</div> -->
+        </div>
       </div>
       <div class="col-md-6">
         <label for="nombre" class="form-label">Nombre</label>
-        <input type="nombre" class="form-control" id="nombre" [(ngModel)]="cliente!.nombre" name="nombre">
+        <input type="nombre" class="form-control" id="nombre" formControlName="nombre" name="nombre" placeholder="Nicolas Colque">
+        <div *ngIf="(nombre?.dirty || nombre?.touched) && nombre?.invalid">
+          <div class="alert alert-danger" *ngIf="nombre?.errors">Nombre es requerido</div>
+          <!-- <div *ngIf="codigo.errors.minlength>Codigo debe ser al menos 2 caracteres.</div> -->
+        </div>
       </div>
     </div>
 
     <div class="row my-2">
       <div class="col-6">
         <label for="tipoDocumento" class="form-label">Tipo Documento</label>
-        <select id="inputDocumento" class="form-select" [(ngModel)]="cliente!.tipoDocumento" name="tipoDocumento">
+        <select id="inputDocumento" class="form-select" formControlName="tipoDocumento" name="tipoDocumento">
           <option selected>CI</option>
           <option>NIT</option>
           <option>DNI</option>
@@ -28,14 +36,25 @@
 
       <div class="col-6">
         <label for="numeroDocumento" class="form-label">Número documento</label>
-        <input type="text" class="form-control" id="numeroDocumento" [(ngModel)]="cliente!.numeroDocumento" name="numeroDocumento">
+        <input type="number" class="form-control" id="numeroDocumento" formControlName="numeroDocumento" name="numeroDocumento" placeholder="789456212">
+        <div *ngIf="(numeroDocumento?.dirty || numeroDocumento?.touched) && numeroDocumento?.invalid">
+          <div class="alert alert-danger" *ngIf="numeroDocumento?.errors">Numero de documento es requerido</div>
+          <!-- <div *ngIf="codigo.errors.minlength>Codigo debe ser al menos 2 caracteres.</div> -->
+        </div>
       </div>
     </div>
 
     <div class="row my-2">
       <div class="col-6">
         <label for="correo" class="form-label">Correo</label>
-        <input type="email" class="form-control" id="correo" [(ngModel)]="cliente!.correo" name="correo">
+        <input type="email" class="form-control" id="correo" formControlName="correo" name="correo" placeholder="xyz@gmail.com">
+        <div *ngIf="(correo?.dirty || correo?.touched) && correo?.invalid">
+          <div class="alert alert-danger" *ngIf="correo?.errors">Correo es requerido</div>
+          <!-- <div *ngIf="codigo.errors.minlength>Codigo debe ser al menos 2 caracteres.</div> -->
+        </div>
+        <!-- <div *ngIf="(correo?.dirty || correo?.touched) && correo?.invalid">
+          <div *ngIf="correo?.errors.pattern">Codigo es requerido</div>
+        </div> -->
       </div>
     </div>
 
@@ -43,7 +62,10 @@
       <button type="submit" class="btn btn-primary">Registrar</button>
     </div>
   </form>
-
+  <br>
+  <br>
+  <br>
+  <div>{{ formRespuesta }}</div>
 </div>
 
 
