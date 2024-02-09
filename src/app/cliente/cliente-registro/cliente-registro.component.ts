@@ -10,8 +10,12 @@ import { Cliente } from 'src/app/models/cliente';
 export class ClienteRegistroComponent implements OnInit {
 
   registroForm: FormGroup;
+
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   formRespuesta = '';
+
+  bandera = false;
 
 
   constructor(private fb: FormBuilder) {
@@ -27,13 +31,21 @@ export class ClienteRegistroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+
+
+
+
+
+
   registrarCliente() {
     /* console.log('Cliente registro', this.cliente); */
     if (this.registroForm.valid) {
-      this.formRespuesta = 'FORMULARIO VALIDO';
-
+      this.bandera = true;
+      this.formRespuesta = 'REGISTRO EXITOSO';
     } else {
-      this.formRespuesta = 'Formulario no valido';
+      this.formRespuesta = 'Registro no exitoso';
     }
   }
 

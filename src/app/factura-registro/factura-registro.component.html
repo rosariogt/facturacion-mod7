@@ -1,1 +1,73 @@
-<p>factura-registro works!</p>
+<!-- <div class="container py-5">
+
+  <div class="row text-center py-5">
+    <h2>REGISTRO CLIENTE</h2>
+  </div>
+
+  <form class="row g-3" [formGroup]="registroForm" (ngSubmit)="registrarCliente()">
+    <div class="row my-2">
+      <div class="col-md-6">
+        <label for="codigo" class="form-label">Código</label>
+        <input type="text" class="form-control" id="codigo" formControlName="codigo" name="codigo" placeholder="AAA111">
+        <div *ngIf="registroForm.get('codigo')?.touched && registroForm.get('codigo')?.errors?.['required']"
+      class="alert alert-danger">Este campo es requerido.</div>
+        <div *ngIf="registroForm.get('codigo')?.touched && registroForm.get('codigo')?.errors?.['minlength']"
+      class="alert alert-danger">El nombre debe tener mas de {{ registroForm.get('codigo')?.errors?.['minlength']?.requiredLength }}
+      characters.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" name="nombre" placeholder="Nicolas Colque">
+        <div *ngIf="registroForm.get('nombre')?.touched && registroForm.get('nombre')?.errors?.['required']"
+      class="alert alert-danger">Este campo es requerido.</div>
+        <div *ngIf="registroForm.get('nombre')?.touched && registroForm.get('nombre')?.errors?.['minlength']"
+      class="alert alert-danger">El nombre debe tener mas de {{ registroForm.get('nombre')?.errors?.['minlength']?.requiredLength }}
+      characters.</div>
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col-6">
+        <label for="tipoDocumento" class="form-label">Tipo Documento</label>
+        <select id="inputDocumento" class="form-select" formControlName="tipoDocumento" name="tipoDocumento">
+          <option selected>CI</option>
+          <option>NIT</option>
+          <option>DNI</option>
+        </select>
+        <div *ngIf="registroForm.get('tipoDocumento')?.touched && registroForm.get('tipoDocumento')?.errors?.['required']"
+      class="alert alert-danger">Debe seleccionar al menos una opción.</div>
+      </div>
+      <div class="col-6">
+        <label for="numeroDocumento" class="form-label">Número documento</label>
+        <input type="number" class="form-control" id="numeroDocumento" formControlName="numeroDocumento" name="numeroDocumento" placeholder="7894562">
+        <div *ngIf="registroForm.get('numeroDocumento')?.touched && registroForm.get('numeroDocumento')?.errors?.['required']"
+      class="alert alert-danger">Este campo es requerido.</div>
+        <div *ngIf="registroForm.get('numeroDocumento')?.touched && registroForm.get('numeroDocumento')?.errors?.['minlength']"
+      class="alert alert-danger">El numero debe tener mas de {{ registroForm.get('numeroDocumento')?.errors?.['minlength']?.requiredLength }}
+      digitos.</div>
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col-6">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="correo" formControlName="correo" name="correo" placeholder="xyz@gmail.com">
+        <div *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.errors?.['required']"
+      class="alert alert-danger">Este campo es requerido.</div>
+        <div *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.errors?.['pattern']"
+      class="alert alert-danger">El formato del correo es incorrecto.</div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="registroForm.invalid">Registrar</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+  <div>{{ formRespuesta }}</div>
+</div> -->
+
+
+
